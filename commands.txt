@@ -1,0 +1,59 @@
+commands:
+adb devices (finds adb device)
+
+adb shell screencap -p /sdcard/screencap.png (adb screenshot)
+
+adb pull /sdcard/screencap.png (adb download screenshot)
+
+adb shell input tap x y (replace coordinates)
+
+
+Get Clipboard from ADB Shell: https://youtu.be/A9hwNcBiFpg
+
+Send SMS from ADB Shell: https://youtu.be/4co6aZt97fE 
+
+ADB CAPTURE SOFTWARE: https://youtu.be/Ns_eSUjos3Q
+
+Visit my Website: http://bit.ly/mygithubblog
+
+
+command to open link in browser
+1.working
+ adb shell am start -a android.intent.action.VIEW -d http://www.stackoverflow.com
+2.not working
+ adb shell pm grant com.android.chrome android.permission.READ_EXTERNAL_STORAGE
+3.automate install app 
+    https://stackoverflow.com/questions/53157208/automated-installation-of-an-apk-from-the-google-play-store
+
+    adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.yourpackagename'
+
+    adb shell input tap <x> <y> (Default: touchscreen) 306 543
+
+    eg --> https://play.google.com/store/apps/details?id=com.facebook.lite
+        adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.facebook.lite'
+
+
+
+4. find x and y cordinate --> https://www.youtube.com/watch?v=PqgDvAAaTgA
+
+GIMP
+
+5
+
+After enabling Usb Debugging Under Developer Options .Please Enable USB Debbugging(Security settings) under developer options itself.
+
+This worked for me !!
+
+
+final test
+    
+    adb shell am start -a android.intent.action.VIEW -d 'market://details?id=com.facebook.lite'
+
+    adb shell input tap 306 543
+
+
+to find list of installed app
+ adb shell pm list packages
+
+ uninstall app
+ adb shell pm uninstall –k —user 0 <com.facebook.lite>
